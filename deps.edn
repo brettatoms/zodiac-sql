@@ -11,7 +11,8 @@
                   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
                                lambdaisland/kaocha {:mvn/version "1.89.1380"}
                                nubank/matcher-combinators {:mvn/version "3.9.1"}
-                               org.xerial/sqlite-jdbc {:mvn/version "3.47.0.0"}}}
+                               org.xerial/sqlite-jdbc {:mvn/version "3.47.0.0"}}
+                  :main-opts ["-m" "kaocha.runner"]}
 
            :build {:deps {io.github.clojure/tools.build {:mvn/version "0.10.5"}
                           slipset/deps-deploy {:mvn/version "0.2.2"}}

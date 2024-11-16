@@ -26,8 +26,7 @@ For an example of how to use this extension see [examples/hello-world](examples/
 (defn routes []
   ["/" {:get #'handler}])
 
-(let [sql-ext (z.sql/init {:spec {:jdbcUrl "jdbc:sqlite:hello-world.db"
-                                  :maxPoolSize 2}})]
+(let [sql-ext (z.sql/init {:spec {:jdbcUrl "jdbc:sqlite:hello-world.db"}})]
   (z/start {:extensions [sql-ext]
             :routes #'routes})
 ```

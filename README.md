@@ -14,35 +14,22 @@ For an example of how to use this extension see [examples/hello-world](examples/
             [zodiac.ext.sql :as z.sql]))
 
 (defn handler [{:keys [::z/context]}]
-  ;; The assets function in the request context can be used
-  ;; to get the url path to built assets from the Vite manifest.
-  (let [{:keys [db]} context]
+  (let [{:keys [db]} context
+        {:keys [message]} (z.sql/execute-one! db {:select [["hello world" :message]]})]
     [:html
      [:head
-       [:script {:src (assets "src/myapp.ts")}]]
+      [:meta {:name "viewport"
+              :content "width=device-width, initial-scale=1"}]]
      [:body
-     (let [result])
-     (z.sql/execute-one! db {:select "hello world"})
-       [:div "hello world"]]]))
+      message]]))
 
 (defn routes []
   ["/" {:get #'handler}])
 
-(let [sql-ext (z.sql/init {spec {}
-                                 ;; so it needs to be an absolute path on the
-                                 ;; filesystem, e.g. not in a jar.
-                                 :config-file (str (fs/path project-root "vite.config.js"))
-                                 ;; The manifest path is the relative resource
-                                 ;; path to the output manifest file. This value doesn't override the build
-                                 ;; time value for the output path of the manifest file.  By default
-                                 ;; the manifest file is written to <outDir>/.vite/manifest.json
-                                 :manifest-path  "myapp/.vite/manifest.json"
-                                 ;; The resource path the the built assets. By default the build assets
-                                 ;; are written to  <outDir>/assets
-                                 :asset-resource-path "myapp/assets"})]
-  (z/start {:extensions [assets-ext]
-            :routes routes})
-
+(let [sql-ext (z.sql/init {:spec {:jdbcUrl "jdbc:sqlite:hello-world.db"
+                                  :maxPoolSize 2}})]
+  (z/start {:extensions [sql-ext]
+            :routes #'routes})
 ```
 
 

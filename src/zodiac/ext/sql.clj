@@ -94,7 +94,7 @@
       (seq query) (str "?" query))))
 
 (defn init [{:keys [spec context-key jdbc-options]
-             :or {context-key :db}
+             :or {context-key ::db}
              :as _options}]
   (fn [config]
     (-> config

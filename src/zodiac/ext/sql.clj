@@ -63,9 +63,9 @@
    (exists? db stmt {}))
   ([db stmt opts]
    {:pre [(map? stmt)]}
-   (-> (execute-one! db {:select [[[:exists stmt] :exists?]]} opts)
-       :exists?
-       (= 1))))
+   (let [r (execute-one! db {:select [[[:exists stmt] :exists?]]} opts)]
+     (or (= (:exists? r) true)
+         (= (:exists? r) 1)))))
 
 (defn count
   "Wrap a HoneySQL statement in a `select count(...)`

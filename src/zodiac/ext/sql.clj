@@ -98,8 +98,8 @@
              :as _options}]
   (fn [config]
     (-> config
-        (assoc ::pool spec)
-        (assoc ::db {:connectable (ig/ref ::pool)
+        (assoc ::pool spec
+               ::db {:connectable (ig/ref ::pool)
                      :jdbc-options jdbc-options})
         ;; Add the key to the request context
         (assoc-in [::z/middleware :context context-key] (ig/ref ::db)))))

@@ -1,5 +1,9 @@
 # Change Log
 
+* 0.1.10 -- 2025-05-26
+  - Bump com.github.seancorfield/honeysql 2.6.1270 -> 2.7.1310
+  - Bump com.github.seancorfield/next.jdbc 1.3.994 -> 1.3.1002
+  - Bump com.zaxxer/HikariCP 6.2.1 -> 6.3.1
 
 * 0.1.9 -- 2025-04-02
   - Accomodate for a database returning 1 or tru for select existsj

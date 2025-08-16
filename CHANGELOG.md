@@ -1,5 +1,11 @@
 # Change Log
 
+
+* 0.1.12 -- 2025-08-16
+  - Bump com.github.seancorfield/honeysql 2.6.1310 -> 2.7.1340
+  - Bump com.github.seancorfield/next.jdbc 1.3.1002 -> 1.3.1048
+  - Bump com.zaxxer/HikariCP 6.3.1 -> 7.0.1
+
 * 0.1.10 -- 2025-05-26
   - Bump com.github.seancorfield/honeysql 2.6.1270 -> 2.7.1310
   - Bump com.github.seancorfield/next.jdbc 1.3.994 -> 1.3.1002

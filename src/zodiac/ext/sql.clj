@@ -95,7 +95,7 @@
                 (seq user) (assoc :user user)
                 (seq password) (assoc :password password)
                 :always (uri/map->query-string))]
-    (cond-> (str "jdbc:" scheme ":" )
+    (cond-> (str "jdbc:" scheme ":")
       (#{"mysql" "postgresql" "postgres" "sqlserver"} scheme) (str "//")
       (seq host) (str host)
       (seq port) (str ": " port)

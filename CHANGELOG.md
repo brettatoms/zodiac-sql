@@ -1,6 +1,6 @@
 # Change Log
 
-* 0.1.16 -- 2025-11-01
+* 0.1.18 -- 2025-11-01
   - Fix database-url->jdbcUrl for sqlite:// urls
   - Bump com.github.seancorfield/honeysql 2.6.1340 -> 2.7.1350
   - Bump com.github.seancorfield/next.jdbc 1.3.1048 -> 1.3.1070

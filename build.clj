@@ -6,7 +6,7 @@
 (def lib 'com.github.brettatoms/zodiac-sql)
 
 (defn- version-base [patch] (format "0.1.%s" patch))
-(def version (version-base (b/git-count-revs nil)))
+(def version (version-base (b/git-count-revs nil))) ;; git rev-list --count HEAD
 (def snapshot (version-base "9999-SNAPSHOT"))
 (def class-dir "target/classes")
 

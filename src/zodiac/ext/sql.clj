@@ -82,7 +82,12 @@
        :count)))
 
 (defn database-url->jdbcUrl
-  "Parse a database url into a jdbc url"
+  "Parse a database url into a jdbc url.
+
+
+  This function isn't exhaustive and probably won't work for more exotic JDBC
+  URLs.
+  "
   [db-url]
   (let [{:keys [scheme user password host port path query]} (uri/uri db-url)
         _ (tap> (str "query: " query))
@@ -90,7 +95,11 @@
                 (seq user) (assoc :user user)
                 (seq password) (assoc :password password)
                 :always (uri/map->query-string))]
-    (cond-> (str "jdbc:" scheme "://" host ":" port path)
+    (cond-> (str "jdbc:" scheme ":" )
+      (#{"mysql" "postgresql" "postgres" "sqlserver"} scheme) (str "//")
+      (seq host) (str host)
+      (seq port) (str ": " port)
+      (seq path) (str path)
       (seq query) (str "?" query))))
 
 (defn init [{:keys [spec context-key jdbc-options]

@@ -53,6 +53,21 @@
                    :query nil
                    :user nil
                    :password nil}
+                  (select-keys parsed [:scheme :host :port :path :query :user :password])))))
+
+  (testing "doesn't use '//' for sqlite"
+    (let [jdbc-url (z.sql/database-url->jdbcUrl "sqlite://test.db")
+          parsed (-> jdbc-url
+                     (subs 5)
+                     (uri/uri))]
+      (is (str/starts-with? jdbc-url "jdbc:"))
+      (is (match? {:scheme "sqlite"
+                   :host nil
+                   :port nil
+                   :path "test.dn"
+                   :query nil
+                   :user nil
+                   :password nil}
                   (select-keys parsed [:scheme :host :port :path :query :user :password]))))))
 
 (deftest execute!

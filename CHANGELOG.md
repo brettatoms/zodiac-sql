@@ -1,6 +1,6 @@
 # Change Log
 
-* 0.2.xx -- Unreleased
+* 0.2.21 -- 2025-12-15
   - Bump com.github.seancorfield/honeysql 2.7.1350 -> 2.7.1364
   - Bump integrant/integrant 0.13.1 -> 1.0.1
   - Bump org.clojure/test.check 1.1.1 -> 1.1.2

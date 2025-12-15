@@ -1,6 +1,7 @@
 # Zodiac SQL
 
 [![Clojars Project](https://img.shields.io/clojars/v/com.github.brettatoms/zodiac-sql.svg)](https://clojars.org/com.github.brettatoms/zodiac-sql)
+[![cljdoc](https://cljdoc.org/badge/com.github.brettatoms/zodiac-sql)](https://cljdoc.org/d/com.github.brettatoms/zodiac-sql)
 
 An extension for [Zodiac](https://github.com/brettatoms/zodiac) to help with connecting to a SQL database with [next.jdbc](https://github.com/seancorfield/next-jdbc) and execute queries with [HoneySQL](https://github.com/seancorfield/honeysql).
 

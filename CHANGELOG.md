@@ -1,5 +1,17 @@
 # Change Log
 
+* 0.2.xx -- Unreleased
+  - Bump com.github.seancorfield/honeysql 2.7.1350 -> 2.7.1364
+  - Bump integrant/integrant 0.13.1 -> 1.0.1
+  - Bump org.clojure/test.check 1.1.1 -> 1.1.2
+  - Bump lambdaisland/kaocha 1.89.1380 -> 1.91.1392
+  - Bump nubank/matcher-combinators 3.9.1 -> 3.9.2
+  - Bump org.xerial/sqlite-jdbc 3.47.0.0 -> 3.51.1.0
+  - Bump io.github.clojure/tools.build 0.10.10 -> 0.10.11
+  - Bump clj-kondo/clj-kondo 2025.07.28 -> 2025.10.23
+  - Bump dev.weavejester/cljfmt 0.13.1 -> 0.15.6
+  - Expanded test coverage
+
 * 0.1.18 -- 2025-11-01
   - Fix database-url->jdbcUrl for sqlite:// urls
   - Bump com.github.seancorfield/honeysql 2.6.1340 -> 2.7.1350

@@ -90,7 +90,6 @@
   "
   [db-url]
   (let [{:keys [scheme user password host port path query]} (uri/uri db-url)
-        _ (tap> (str "query: " query))
         query (cond-> (uri/query-string->map query)
                 (seq user) (assoc :user user)
                 (seq password) (assoc :password password)
@@ -98,7 +97,7 @@
     (cond-> (str "jdbc:" scheme ":")
       (#{"mysql" "postgresql" "postgres" "sqlserver"} scheme) (str "//")
       (seq host) (str host)
-      (seq port) (str ": " port)
+      (seq port) (str ":" port)
       (seq path) (str path)
       (seq query) (str "?" query))))
 

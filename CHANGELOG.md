@@ -1,6 +1,6 @@
 # Change Log
 
-* 0.2.23 -- 2026-06-27
+* 0.3.24 -- 2026-06-27
   - Fix database-url->jdbcUrl emitting a stray space before the port
   - Bump com.github.seancorfield/honeysql 2.7.1364 -> 2.7.1392
   - Bump com.github.seancorfield/next.jdbc 1.3.1070 -> 1.3.1118

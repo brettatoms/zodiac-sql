@@ -5,7 +5,7 @@
 
 (def lib 'com.github.brettatoms/zodiac-sql)
 
-(defn- version-base [patch] (format "0.2.%s" patch))
+(defn- version-base [patch] (format "0.3.%s" patch))
 (def version (version-base (b/git-count-revs nil))) ;; git rev-list --count HEAD
 (def snapshot (version-base "9999-SNAPSHOT"))
 (def class-dir "target/classes")
@@ -61,7 +61,6 @@
   (b/copy-dir {:src-dirs ["src" "resources"]
                :target-dir class-dir})
   (b/jar (jar-opts opts)))
-
 
 (defn ci "Run the CI pipeline of tests (and build the JAR)." [opts]
   (test opts)

@@ -1,5 +1,19 @@
 # Change Log
 
+* 0.2.23 -- 2026-06-27
+  - Fix database-url->jdbcUrl emitting a stray space before the port
+  - Bump com.github.seancorfield/honeysql 2.7.1364 -> 2.7.1392
+  - Bump com.github.seancorfield/next.jdbc 1.3.1070 -> 1.3.1118
+  - Bump com.zaxxer/HikariCP 7.0.2 -> 7.1.0
+  - Bump org.clojure/tools.logging 1.3.0 -> 1.3.1
+  - Bump org.clojure/test.check 1.1.2 -> 1.1.3
+  - Bump nubank/matcher-combinators 3.9.2 -> 3.10.0
+  - Bump org.xerial/sqlite-jdbc 3.51.1.0 -> 3.53.2.0
+  - Bump io.github.clojure/tools.build 0.10.11 -> 0.10.14
+  - Bump slipset/deps-deploy 0.2.2 -> 0.2.5
+  - Bump clj-kondo/clj-kondo 2025.10.23 -> 2026.05.25
+  - Bump dev.weavejester/cljfmt 0.15.6 -> 0.16.4
+
 * 0.2.22 -- 2025-12-15
   - Fix build number
 

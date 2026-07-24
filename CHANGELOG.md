@@ -1,5 +1,15 @@
 # Change Log
 
+* 0.3.27 -- 2026-07-23
+  - Fix the CI deploy so snapshots and releases no longer race on Clojars: the
+    Java 17/21 test matrix no longer each deploy the same snapshot, deploys run
+    once after lint, format, and both test jobs pass, and a shared concurrency
+    group serializes the snapshot and release deploys across workflows
+  - Fix `build/jar` to include the POM's license and SCM metadata (Clojars
+    rejects a POM without a license) and to honor the `:snapshot` version
+  - Pin GitHub Actions to commit SHAs
+  - Bump com.github.seancorfield/honeysql 2.7.1392 -> 2.7.1399
+
 * 0.3.24 -- 2026-06-27
   - Fix database-url->jdbcUrl emitting a stray space before the port
   - Bump com.github.seancorfield/honeysql 2.7.1364 -> 2.7.1392
